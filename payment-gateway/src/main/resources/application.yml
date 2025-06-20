@@ -1,0 +1,35 @@
+server:
+  port: 9192
+spring:
+  application:
+    name: payment-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 将gateway注册到nacos
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 让gateway从nacos中获取服务信息
+      routes:
+        - id: payment_pay_url
+          uri: lb://payment-pay
+          order: 1
+          predicates:
+            - Path=/pay-api/**
+          filters:
+            - StripPrefix=1
+        - id: payment_service_url
+          uri: lb://payment-service
+          order: 1
+          predicates:
+            - Path=/service-api/**
+          filters:
+            - StripPrefix=1
+        - id: payment_framework_url
+          uri: lb://payment-framework
+          order: 1
+          predicates:
+            - Path=/framework-api/**
+          filters:
+            - StripPrefix=1
