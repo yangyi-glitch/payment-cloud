@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableDiscoveryClient
 @EnableFeignClients
-@ComponentScan(basePackages = {"mav.shan.paymentframework", "mav.shan.paymentservice"})
+@ComponentScan(basePackages = {"mav.shan.paymentcommon", "mav.shan.paymentservice"})
 @SpringBootApplication
 public class PaymentServiceApplication {
 
