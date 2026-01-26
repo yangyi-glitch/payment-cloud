@@ -35,7 +35,7 @@
 
         <dependency>
             <groupId>mav.shan</groupId>
-            <artifactId>payment-framework</artifactId>
+            <artifactId>payment-common</artifactId>
             <version>2.5.15</version>
         </dependency>
     </dependencies>

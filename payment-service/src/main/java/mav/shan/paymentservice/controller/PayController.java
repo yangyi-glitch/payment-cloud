@@ -17,7 +17,7 @@ public class PayController {
 
     @GetMapping("pay-1")
     public String pay1() {
-//        String s1 = payClient.pay1();
+        String s1 = payClient.pay1();
 //        System.out.println("pay-1：" + s1);
 //        String s2 = payClient.pay2(1L, "杨溢");
 //        System.out.println("pay-2：" + s2);

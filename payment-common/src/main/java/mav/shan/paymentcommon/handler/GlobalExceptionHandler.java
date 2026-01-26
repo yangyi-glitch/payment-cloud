@@ -15,7 +15,7 @@ import static mav.shan.paymentcommon.utils.ResultUtils.error;
 public class GlobalExceptionHandler {
     @ExceptionHandler(value = ServiceException.class)
     public ResultUtils defaultExceptionHandler(HttpServletRequest req, Throwable ex) {
-        log.error("[defaultExceptionHandler]", ex);
+//        log.error("[defaultExceptionHandler]", ex);
         return error(ex.getMessage());
     }
 }
